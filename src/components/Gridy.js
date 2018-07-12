@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { css } from 'styled-components'
 import P from 'prop-types'
 
@@ -15,20 +14,20 @@ export const Layout = styled.div`
 
   @media (min-width: ${p => p.breakPoint}) {
     ${p =>
-      p.asideRight
-        ? css`
+    p.asideRight
+      ? css`
             grid-template-columns: 6fr 1fr;
             grid-template-areas:
               ${p =>
-                p.cutedHeader ? css`'header aside'` : css`'header header'`}
+    p.cutedHeader ? css`'header aside'` : css`'header header'`}
               'main aside'
               'footer footer';
           `
-        : css`
+      : css`
             grid-template-columns: 1fr 6fr;
             grid-template-areas:
               ${p =>
-                p.cutedHeader ? css`'aside header'` : css`'header header'`}
+    p.cutedHeader ? css`'aside header'` : css`'header header'`}
               'aside main'
               'footer footer';
           `};
@@ -45,27 +44,27 @@ export const Layout = styled.div`
 `
 Layout.propTypes = {
   /**
-   * @property {propTypes.string} gap - Gap between grid items.
+   * @property {string} gap - Gap between grid items.
    */
   gap: P.string,
   /**
-   * @property {propTypes.string} breakPoint - Minimal width before displaying multi-column layout .
+   * @property {string} breakPoint - Minimal width before displaying multi-column layout .
    */
   breakPoint: P.string,
   /**
-   * @property {propTypes.string} mainRowSize - Main row width as a grid template unit (fr, px...)
+   * @property {string} mainRowSize - Main row width as a grid template unit (fr, px...)
    */
   mainRowSize: P.string,
   /**
-   * @property {propTypes.boolean} asideRight - Place the aside to the right
+   * @property {boolean} asideRight - Place the aside to the right
    */
   asideRight: P.bool,
   /**
-   * @property {propTypes.boolean} cutedHeader - Extend the aside to the start of the header row
+   * @property {boolean} cutedHeader - Extend the aside to the start of the header row
    */
   cutedHeader: P.bool,
   /**
-   * @property {propTypes.boolean} debugBg - Add a beautiful background to all grid items for ease of debugging
+   * @property {boolean} debugBg - Add a beautiful background to all grid items for ease of debugging
    */
   debugBg: P.bool
 }

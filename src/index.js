@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Header, Aside, Main, Footer, Layout } from './components/Gridy'
+import { Layout, Header, Aside, Main, Footer } from './components/Gridy'
 
 const App = () => (
   <Layout debugBg>
