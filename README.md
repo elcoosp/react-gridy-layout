@@ -37,7 +37,7 @@ import {
   Aside,
   Main,
   Footer
-} from '@bit/elcoosp.ui.components.gridy'
+} from '@bit/elcoosp.ui.components.gridy/Gridy'
 
 // Check the documentation for all the available props on the Layout component
 const App = () => (
