@@ -1,0 +1,5 @@
+.bit
+.cache
+.bitmap
+dist/
+node_modules/
