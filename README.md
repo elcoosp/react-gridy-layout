@@ -28,7 +28,13 @@ Documentation available [here](https://bitsrc.io/elcoosp/ui/components/gridy)
 ```javascript
 import React from 'react'
 import { render } from 'react-dom'
-import { Layout, Header, Aside, Main, Footer } from './components/Gridy'
+import {
+  Layout,
+  Header,
+  Aside,
+  Main,
+  Footer
+} from '@bit/elcoosp.ui.components.gridy'
 
 // Check the documentation for all the available props on the Layout component
 const App = () => (
