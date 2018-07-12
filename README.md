@@ -8,15 +8,18 @@ Css grid react component for simple layout
 ## Table of Contents
 
 - [React-gridy-layout](#react-gridy-layout)
-    - [Table of Contents](#table-of-contents)
-    - [Installation](#installation)
-    - [Usage](#usage)
-        - [Example](#example)
-    - [Support](#support)
-    - [Contributing](#contributing)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Example](#example)
+  - [Support](#support)
+  - [Contributing](#contributing)
 
 ## Installation
 
+First be sure to set the @bit registery with :
+`npm config set '@bit:registry' https://node.bitsrc.io`
+Then run :
 `npm i @bit/elcoosp.ui.components.gridy`
 
 ## Usage
