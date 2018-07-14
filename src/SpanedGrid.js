@@ -3,7 +3,11 @@ import { render } from 'react-dom'
 import { SpanedGrid } from './components/SpanedGrid'
 
 const App = () => (
-  <SpanedGrid debug data={[{ rank: 1 }, { rank: 3 }, { rank: 5 }]}>
+  <SpanedGrid
+    debug
+    data={[{ rank: 1 }, { rank: 3 }, { rank: 5 }]}
+    spanningType="alternate"
+  >
     <div>1</div>
     <div>2</div>
     <div>3</div>
