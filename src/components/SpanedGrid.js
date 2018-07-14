@@ -2,7 +2,12 @@ import styled, { css } from 'styled-components'
 import P from 'prop-types'
 
 const sumSubProp = subProp => ({
-  on: prop => o => o[prop].reduce((acc, subObj) => (acc += subObj[subProp]), 0)
+  onProp: prop => o =>
+    o[prop].reduce((acc, subObj) => (acc += subObj[subProp]), 0)
+})
+
+const matchValOfProp = prop => ({
+  with: matchers => o => matchers[o[prop]]
 })
 
 export const SpanedGrid = styled.div`
@@ -10,12 +15,27 @@ export const SpanedGrid = styled.div`
   grid-gap: ${p => p.gap};
   height: ${p => p.height};
   width: ${p => p.width};
-  grid-template-columns: repeat(${sumSubProp('rank').on('data')}, 1fr);
+  grid-template-columns: repeat(${sumSubProp('rank').onProp('data')}, 1fr);
   ${p =>
     p.data.map(
       ({ rank }, i) => css`
         > *:nth-child(${i + 1}) {
-          grid-column: span ${rank};
+          ${matchValOfProp('spanningType').with({
+    column: css`
+              grid-column: span ${rank};
+            `,
+    row: css`
+              grid-row: span ${rank};
+            `,
+    alternate:
+              i % 2 === 0
+                ? css`
+                    grid-column: span ${rank};
+                  `
+                : css`
+                    grid-row: span ${rank};
+                  `
+  })};
         }
       `
     )};
@@ -53,7 +73,11 @@ SpanedGrid.propTypes = {
     P.shape({
       rank: P.number
     }).isRequired
-  )
+  ),
+  /**
+   * @property {string} spanningType - Wether to span items on column, row, or alternate.
+   */
+  spanningType: P.oneOf(['column', 'row', 'alternate'])
 }
 
 SpanedGrid.defaultProps = {
